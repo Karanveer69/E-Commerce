@@ -1,5 +1,6 @@
 // homeProductsCards.js
 
+import { addToCart } from "./addToCart";
 import { homeQuantityToggle } from "./homeQuantityToggle";
 
 const productContainer = document.querySelector("#productContainer");
@@ -28,6 +29,10 @@ export const showProductsContainer = (products) => {
             homeQuantityToggle(event, id, stock);
         });
 
+
+        productClone.querySelector(".add-to-cart-button").addEventListener("click",(event)=>{
+                addToCart(event,id,stock);
+            })
         productContainer.append(productClone);
     });
 };

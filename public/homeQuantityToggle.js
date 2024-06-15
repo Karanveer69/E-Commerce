@@ -25,3 +25,6 @@ export const homeQuantityToggle = (event, id, stock) => {
 
     return quantity;
 };
+// export const function_name = (parameter1,parameter2,....) =>{
+//           content_of_the_function
+// }
