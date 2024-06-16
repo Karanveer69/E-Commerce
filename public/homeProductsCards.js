@@ -2,9 +2,15 @@
 
 import { addToCart } from "./addToCart";
 import { homeQuantityToggle } from "./homeQuantityToggle";
+import { getCartProductsFromLS } from "./getCartProducts";
 
 const productContainer = document.querySelector("#productContainer");
 const productTemplate = document.querySelector("#productTemplate");
+
+// Initialize the cart value on page load
+document.addEventListener("DOMContentLoaded", () => {
+    getCartProductsFromLS();
+});
 
 export const showProductsContainer = (products) => {
     if (!products || products.length === 0) {
@@ -29,10 +35,10 @@ export const showProductsContainer = (products) => {
             homeQuantityToggle(event, id, stock);
         });
 
+        productClone.querySelector(".add-to-cart-button").addEventListener("click", (event) => {
+            addToCart(event, id, stock);
+        });
 
-        productClone.querySelector(".add-to-cart-button").addEventListener("click",(event)=>{
-                addToCart(event,id,stock);
-            })
         productContainer.append(productClone);
     });
 };
