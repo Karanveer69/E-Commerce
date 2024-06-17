@@ -1,5 +1,3 @@
-// getCartProducts.js
-
 import { updateCartValue } from "./updateCartValue";
 
 export const getCartProductsFromLS = () => {

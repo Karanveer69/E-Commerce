@@ -1,5 +1,3 @@
-// homeProductsCards.js
-
 import { addToCart } from "./addToCart";
 import { homeQuantityToggle } from "./homeQuantityToggle";
 import { getCartProductsFromLS } from "./getCartProducts";
